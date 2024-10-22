@@ -116,8 +116,15 @@ a:focus {
   margin: 0px 15px;
 }
 
-.form-email {
+.recommendations_section {
+  padding-top: 120px;
+}
+
+.contact_section input.form-email {
   color: #000;
+  border: 1px solid #999;
+  border-radius: 2px;
+  box-shadow: none;
 }
 
 .form-text {
