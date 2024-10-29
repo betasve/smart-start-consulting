@@ -376,7 +376,10 @@ a:focus {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  margin: 0px 10px;
+}
+
+.feature_section .feature_container .feature_element:nth-child(2) {
+  margin: 0px 20px;
 }
 
 .feature_section .feature_container .box {
@@ -474,6 +477,17 @@ a:focus {
   display: none !important;
 }
 
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+
+#contact-me-button {
+  line-height: 30px;
+}
+
 .about_section .detail-box a {
   margin-top: 15px;
   display: inline-block;
@@ -484,6 +498,24 @@ a:focus {
   border: 1px solid #0355cc;
   border-radius: 2px;
   color: #ffffff;
+}
+
+#free-consultation {
+  line-height: 14px;
+  background-color: #28b50a;
+  border: 1px solid #28b50a;
+}
+
+#free-consultation:hover {
+  line-height: 14px;
+  background-color: transparent;
+  color: #28b50a;
+  border: 1px solid #28b50a;
+}
+
+#free-consultation span {
+  font-size: 12px;
+  text-transform: none;
 }
 
 .about_section .detail-box a:hover {
@@ -895,5 +927,14 @@ a:focus {
   color: inherit;
 }
 
+@media (max-width: 1200px) {
+  .buttons-container a {
+    font-size: 14px;
+  }
+  
+  .slider_section .detail-box {
+    padding-bottom: 120px;
+  }
+}
 /* end footer section*/
 /*# sourceMappingURL=style.css.map */

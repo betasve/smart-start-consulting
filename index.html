@@ -94,9 +94,15 @@
               <p>
                 <strong>At StartSmart Consulting, I help empower businesses to streamline operations and drive growth through tailored API development, seamless third-party integration, and expert digital transformation services. With a focus on automation, process optimization, and efficient project management, I help organizations modernize their technology stack, enhance productivity, and deliver projects on time and within budget. My holistic approach ensures that businesses not only adopt cutting-edge solutions but also scale them effectively for long-term success.</strong>
               </p>
-              <a href="#contact-me">
-                Contact me
-              </a>
+              <div class="buttons-container">
+                <a id="contact-me-button" href="#contact-me">
+                  Contact me
+                </a>
+                <a id="free-consultation" href="#contact-me">
+                  Get 2 hours for free<br/>
+                  <span>(let's talk, no strings attached)</span>
+                </a>
+              </div>
             </div>
           </div>
           <div class="col-md-6">
@@ -259,7 +265,7 @@
             method="POST"
           >
             <input class="form-email" type="email" name="email" placeholder="Your email"/>
-            <textarea class="form-text" name="message" placeholder="Your message"></textarea><br/>
+            <textarea id="textarea" class="form-text" name="message" placeholder="Your message"></textarea><br/>
             <button type="submit">Send</button>
           </form>
         </div>
