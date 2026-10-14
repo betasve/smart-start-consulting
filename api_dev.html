@@ -181,7 +181,8 @@
 </section>
 
 <footer>
-    <p>&#169; 2026 SmartStart Consulting. All Rights Reserved.</p>
+    <p>&#169; <span id="displayDateYear">2026</span> SmartStart Consulting. All Rights Reserved.</p>
+    <script>document.getElementById("displayDateYear").textContent = new Date().getFullYear();</script>
 </footer>
 
 </body>
