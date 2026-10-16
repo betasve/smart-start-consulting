@@ -47,7 +47,7 @@
                 en: {
                     consentModal: {
                         title: 'We use cookies',
-                        description: 'We use analytics cookies to understand how visitors use this website, so we can improve it. They are only set if you accept them.',
+                        description: 'We use analytics cookies to understand how visitors use this website, so we can improve it. They are only set if you accept them. <a href="privacy.html">Privacy Policy</a>',
                         acceptAllBtn: 'Accept all',
                         acceptNecessaryBtn: 'Reject all',
                         showPreferencesBtn: 'Manage preferences'
@@ -75,6 +75,10 @@
                                         { name: '_ga_*', expiration: '2 years', description: 'Keeps the session state' }
                                     ]
                                 }
+                            },
+                            {
+                                title: 'More information',
+                                description: 'Read the <a href="privacy.html">Privacy Policy</a> for details on how your data is handled and how to contact us.'
                             }
                         ]
                     }

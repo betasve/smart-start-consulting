@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather+Sans:wght@400;700&display=swap");
+@import url("fonts.css");
 body {
   font-family: 'Lato', sans-serif;
   color: #040000;
@@ -130,6 +130,12 @@ a:focus {
 .form-text {
   width: 100%;
   padding: 23px;
+}
+
+.contact_section .form-note {
+  margin-top: 10px;
+  font-size: 0.85em;
+  color: #666;
 }
 
 .header_section .header_bottom {
@@ -793,14 +799,6 @@ a:focus {
 .contact_section button:hover {
   background-color: transparent;
   color: #0355cc;
-}
-
-.contact_section .map_container {
-  height: 360px;
-}
-
-.contact_section .map_container .map {
-  height: 100%;
 }
 
 .info_section {
