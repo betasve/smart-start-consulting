@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <!-- Google Analytics is loaded only after cookie consent, see js/consent.js -->
@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3.0.1/dist/cookieconsent.css" />
   <script defer src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
   <script defer src="js/consent.js"></script>
+  <script defer src="js/tracking.js"></script>
   <meta charset="utf-8" />
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -26,10 +27,21 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="keywords" content="consulting company, software consulting, project management, digital transformation" />
-  <meta name="description" content="A consulting company for Software and Project Management Consulting" />
-  <meta name="author" content="Svetosav Blyahov" />
+  <meta name="description" content="Senior software consulting for startups and SMEs in Bulgaria and the EU: API development, technical project management and digital transformation." />
+  <meta name="author" content="Svetoslav Blyahov" />
 
   <title>SmartStart Consulting</title>
+  <link rel="canonical" href="https://smart-start-consulting.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SmartStart Consulting">
+  <meta property="og:title" content="SmartStart Consulting">
+  <meta property="og:description" content="Senior software consulting for startups and SMEs in Bulgaria and the EU: API development, technical project management and digital transformation.">
+  <meta property="og:url" content="https://smart-start-consulting.com/">
+  <meta property="og:image" content="https://smart-start-consulting.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="SmartStart Consulting: senior software engineering and tech leadership for startups and SMEs">
+  <meta name="twitter:card" content="summary_large_image">
 
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
   <link href="css/style.css" rel="stylesheet" />
@@ -43,7 +55,7 @@
         <div class="container-fluid">
           <nav class="site_nav">
             <a class="site_logo" href="index.html">
-              <img src="images/logo-dark.svg" alt="SmartStart Consulting" height="48">
+              <img src="images/logo-dark.svg" alt="SmartStart Consulting" width="207" height="48">
             </a>
             <ul class="site_menu" id="site-menu">
               <li><a href="#services">Services</a></li>
@@ -51,13 +63,13 @@
               <li><a href="#contact-me">Contact Me</a></li>
             </ul>
             <div class="socials">
-              <a href="https://wa.me/359889375888?text=Hello%20I%20am%20interested%20in%20your%20services">
+              <a href="https://wa.me/359889375888?text=Hello%20I%20am%20interested%20in%20your%20services" aria-label="WhatsApp">
                 <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
               </a>
-              <a href="viber://chat?number=359889375888&amp;text=Hello%20I%20am%20interested%20in%20your%20services">
+              <a href="viber://chat?number=359889375888&amp;text=Hello%20I%20am%20interested%20in%20your%20services" aria-label="Viber">
                 <i class="fa-brands fa-viber" aria-hidden="true"></i>
               </a>
-              <a href="https://linkedin.com/in/sve" target="_blank">
+              <a href="https://linkedin.com/in/sve" target="_blank" aria-label="LinkedIn">
                 <i class="fa fa-linkedin" aria-hidden="true"></i>
               </a>
             </div>
@@ -97,7 +109,7 @@
           </div>
           <div class="col-md-6">
             <div class="img-box">
-              <img src="images/slider-img.png" alt=""/>
+              <img src="images/slider-img.webp" alt="Cartoon portrait of Svetoslav Blyahov" width="599" height="819" fetchpriority="high"/>
             </div>
           </div>
         </div>
@@ -146,9 +158,9 @@
             </h2>
             <p>
               <br/>
-              <img src="images/toptal.png" width="100px"/> - A global network of top freelancers<br/><br/>
-              <img src="images/qaiware.png" width="100px"/> - A payment processor and fintech company<br/><br/>
-              <img src="images/tradeo.png" width="100px"/> - Social Forex Trading platform<br/>
+              <img src="images/toptal.webp" alt="Toptal" width="100" height="28" loading="lazy"/> - A global network of top freelancers<br/><br/>
+              <img src="images/qaiware.webp" alt="Qaiware" width="100" height="18" loading="lazy"/> - A payment processor and fintech company<br/><br/>
+              <img src="images/tradeo.webp" alt="Tradeo" width="100" height="28" loading="lazy"/> - Social Forex Trading platform<br/>
             </p>
           </div>
         </div>
@@ -158,18 +170,18 @@
               Integrated services
             </h2>
             <div class="services-container">
-              <img class="integrated-service" src="images/google-drive.png" width="100px"/>
-              <img class="integrated-service" src="images/github.png" width="100px"/>
-              <img class="integrated-service" src="images/docker.png" width="100px"/>
-              <img class="integrated-service" src="images/aws.png" width="100px"/>
-              <img class="integrated-service" src="images/zendesk.png" width="100px"/>
-              <img class="integrated-service" src="images/zoom.png" width="100px"/> 
-              <img class="integrated-service" src="images/pg.png" width="100px"/> 
-              <img class="integrated-service" src="images/redis.png" width="100px"/> 
-              <img class="integrated-service" src="images/graphql.png" width="100px"/>
-              <img class="integrated-service" src="images/kafka.png" width="100px"/> 
-              <img class="integrated-service" src="images/openai.png" width="100px"/>
-              <img class="integrated-service" src="images/slack.png" width="100px"/> 
+              <img class="integrated-service" src="images/google-drive.webp" alt="Google Drive" width="100" height="89" loading="lazy"/>
+              <img class="integrated-service" src="images/github.webp" alt="GitHub" width="100" height="90" loading="lazy"/>
+              <img class="integrated-service" src="images/docker.webp" alt="Docker" width="100" height="90" loading="lazy"/>
+              <img class="integrated-service" src="images/aws.webp" alt="AWS" width="100" height="60" loading="lazy"/>
+              <img class="integrated-service" src="images/zendesk.webp" alt="Zendesk" width="100" height="71" loading="lazy"/>
+              <img class="integrated-service" src="images/zoom.webp" alt="Zoom" width="100" height="92" loading="lazy"/> 
+              <img class="integrated-service" src="images/pg.webp" alt="PostgreSQL" width="100" height="100" loading="lazy"/> 
+              <img class="integrated-service" src="images/redis.webp" alt="Redis" width="100" height="100" loading="lazy"/> 
+              <img class="integrated-service" src="images/graphql.webp" alt="GraphQL" width="100" height="29" loading="lazy"/>
+              <img class="integrated-service" src="images/kafka.webp" alt="Apache Kafka" width="100" height="47" loading="lazy"/> 
+              <img class="integrated-service" src="images/openai.webp" alt="OpenAI" width="100" height="27" loading="lazy"/>
+              <img class="integrated-service" src="images/slack.webp" alt="Slack" width="100" height="36" loading="lazy"/> 
             </div>
         </div>
       </div>
@@ -182,7 +194,7 @@
       <div class="row">
         <div class="col-md-6">
           <div class="img-box">
-            <img src="images/professional-img.png" alt=""/>
+            <img src="images/professional-img.webp" alt="Cartoon of Svetoslav Blyahov pointing to the consultation process" width="341" height="456" loading="lazy"/>
           </div>
         </div>
         <div class="col-md-6 ">
@@ -254,8 +266,9 @@
             action="https://formspree.io/f/meoqqeln"
             method="POST"
           >
-            <input class="form-email" type="email" name="email" placeholder="Your email"/>
-            <textarea id="textarea" class="form-text" name="message" placeholder="Your message"></textarea><br/>
+            <input class="form-email" type="email" name="email" placeholder="Your email" required/>
+            <textarea id="textarea" class="form-text" name="message" placeholder="Your message" required></textarea><br/>
+            <input type="text" name="_gotcha" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
             <button type="submit">Send</button>
           </form>
           <p class="form-note">Your email is used only to reply to your message. See the <a href="privacy.html">Privacy Policy</a>.</p>

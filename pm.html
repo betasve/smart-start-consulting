@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3.0.1/dist/cookieconsent.css" />
     <script defer src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
     <script defer src="js/consent.js"></script>
+    <script defer src="js/tracking.js"></script>
     <meta charset="UTF-8">
     <link rel="icon" href="favicon.ico" sizes="32x32">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -24,6 +25,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Technical Project Management as a Service by Svetoslav Blyahov. Experienced in managing software projects, backend development, and cloud infrastructure with automation for cost efficiency.">
     <title>Technical Project Management by Svetoslav Blyahov</title>
+    <link rel="canonical" href="https://smart-start-consulting.com/pm.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SmartStart Consulting">
+    <meta property="og:title" content="Technical Project Management by Svetoslav Blyahov">
+    <meta property="og:description" content="Technical Project Management as a Service by Svetoslav Blyahov. Experienced in managing software projects, backend development, and cloud infrastructure with automation for cost efficiency.">
+    <meta property="og:url" content="https://smart-start-consulting.com/pm.html">
+    <meta property="og:image" content="https://smart-start-consulting.com/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="SmartStart Consulting: senior software engineering and tech leadership for startups and SMEs">
+    <meta name="twitter:card" content="summary_large_image">
     
     <!-- Manrope, self-hosted -->
     <link href="css/fonts.css" rel="stylesheet">
@@ -136,6 +148,18 @@
             font-size: 0.85em;
             color: #666;
         }
+        .form-honeypot {
+            display: none;
+        }
+        .cta .form-status {
+            font-weight: bold;
+        }
+        .form-status-success {
+            color: #1e7e34;
+        }
+        .form-status-error {
+            color: #c0392b;
+        }
         footer {
             text-align: center;
             padding: 1em;
@@ -195,8 +219,9 @@
         method="POST"
         class="contact-form"
         >
-            <input class="form-email" type="email" name="email" placeholder="Your email"/><br/>
-            <textarea class="form-text" name="message" placeholder="Your message"></textarea><br/>
+            <input class="form-email" type="email" name="email" placeholder="Your email" required/><br/>
+            <textarea class="form-text" name="message" placeholder="Your message" required></textarea><br/>
+            <input type="text" name="_gotcha" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
             <button type="submit">SEND</button>
         </form>
         <p class="form-note">Your email is used only to reply to your message. See the <a href="privacy.html">Privacy Policy</a>.</p>

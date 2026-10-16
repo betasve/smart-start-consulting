@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', evt => {
         consultationsDescription.setAttribute("class", "");
     });
 
-    document.getElementById('contact-me').addEventListener('click', function(event){
+    document.getElementById('contact-me-button').addEventListener('click', function(event){
         gtag(
             'event',
             'button_click', 
@@ -71,7 +71,11 @@ document.addEventListener('DOMContentLoaded', evt => {
     });
 
     document.getElementById('free-consultation').addEventListener('click', function(event){
-        document.getElementById('textarea').textContent = "I would want to use my 2 hours of free consultation time to ask you about...";
+        // .value (not .textContent) so it also works after the visitor typed in the field
+        var message = document.getElementById('textarea');
+        if (!message.value) {
+            message.value = "I would want to use my 2 hours of free consultation time to ask you about...";
+        }
 
         gtag(
             'event',

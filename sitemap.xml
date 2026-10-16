@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://smart-start-consulting.com/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://smart-start-consulting.com/api_dev.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smart-start-consulting.com/pm.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smart-start-consulting.com/digital.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smart-start-consulting.com/privacy.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <priority>0.3</priority>
+  </url>
+</urlset>

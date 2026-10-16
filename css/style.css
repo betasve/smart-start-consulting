@@ -130,6 +130,11 @@ a:focus {
   font-size: 30px;
 }
 
+.header_section .socials a {
+  display: inline-block;
+  padding: 4px;
+}
+
 .header_section .socials a i {
   color: #ff8a1d;
 }
@@ -190,6 +195,28 @@ a:focus {
   margin-top: 10px;
   font-size: 0.85em;
   color: #666;
+}
+
+.contact_section .form-note a {
+  color: #0355cc;
+  text-decoration: underline;
+}
+
+.form-honeypot {
+  display: none;
+}
+
+.contact_section .form-status {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.form-status-success {
+  color: #1e7e34;
+}
+
+.form-status-error {
+  color: #c0392b;
 }
 
 .quote_btn-container {
@@ -276,6 +303,7 @@ a:focus {
 
 .slider_section .img-box img {
   width: 100%;
+  height: auto;
 }
 
 .feature_section {
@@ -391,6 +419,11 @@ a:focus {
   justify-content: space-between;
 }
 
+/* width/height attributes reserve the space; keep the exact aspect ratio */
+.about_section .detail-box img {
+  height: auto;
+}
+
 .about_section .detail-box .integrated-service{
   margin-left: 20px;
   margin-top: 20px;
@@ -467,6 +500,7 @@ a:focus {
 
 .professional_section .img-box img {
   width: 100%;
+  height: auto;
 }
 
 .professional_section .detail-box h2 {
