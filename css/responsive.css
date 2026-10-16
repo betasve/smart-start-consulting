@@ -7,10 +7,6 @@
         height: auto;
     }
 
-    .header_section .main_nav {
-        flex: 1;
-    }
-
     /* Header: menu collapses below the bar, opened with the menu button */
     .site_nav {
         grid-template-columns: 1fr auto auto;
@@ -136,6 +132,11 @@
 
     .header_section .socials .fa-viber {
         margin: 0px 8px;
+    }
+
+    /* Long single-word headings ("RECOMMENDATIONS") must fit on the smallest phones */
+    .heading_container h2 {
+        font-size: 26px;
     }
 }
 
