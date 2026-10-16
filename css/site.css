@@ -715,6 +715,125 @@ textarea:focus-visible {
   color: var(--on-ink);
 }
 
+/* Service pages */
+.page-hero h1 {
+  max-width: 16em;
+  font-size: clamp(2.125rem, 4.6vw, 3.5rem);
+}
+
+.page-back {
+  margin-bottom: 20px;
+  font-size: 0.9375rem;
+  font-weight: 700;
+}
+
+.page-person {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
+.page-person img {
+  width: 56px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 24px 4px 24px 4px;
+}
+
+.page-person p {
+  margin: 0;
+}
+
+.page-person strong {
+  color: var(--ink);
+}
+
+.problems {
+  padding: var(--section) 0;
+}
+
+.problems-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+  gap: 24px clamp(32px, 6vw, 80px);
+}
+
+.problems ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.problems li {
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+  font-size: 1.1875rem;
+  font-weight: 600;
+}
+
+.problems li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.features {
+  padding: 0 0 var(--section);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px clamp(32px, 5vw, 64px);
+}
+
+.feature-grid article {
+  padding-top: 20px;
+  border-top: 3px solid var(--orange);
+}
+
+.feature-grid h3 {
+  margin-bottom: 10px;
+}
+
+.feature-grid p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.case-wide {
+  max-width: none;
+}
+
+.case-wide h3 {
+  font-size: clamp(1.375rem, 2.4vw, 1.75rem);
+  font-weight: 800;
+}
+
+.case-wide dl {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  font-size: 1rem;
+}
+
+.case.case-wide dd {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.case.case-wide div:last-child dd {
+  color: var(--ink);
+}
+
+.quotes-pair {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: auto;
+}
+
 /* Tablet */
 @media (max-width: 1000px) {
   .steps-list {
@@ -737,6 +856,11 @@ textarea:focus-visible {
 
   .quote-featured {
     grid-row: auto;
+  }
+
+  .case-wide dl {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
   }
 }
 
@@ -810,7 +934,9 @@ textarea:focus-visible {
     margin: 0;
   }
 
-  .service {
+  .service,
+  .problems-grid,
+  .feature-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 
