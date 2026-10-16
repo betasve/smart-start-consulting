@@ -2,14 +2,22 @@
 <html>
 
 <head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MSQCJPZYLT"></script>
+  <!-- Google Analytics is loaded only after cookie consent, see js/consent.js -->
   <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+          'analytics_storage': 'denied',
+          'ad_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied'
+      });
       gtag('js', new Date());
-
       gtag('config', 'G-MSQCJPZYLT');
   </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3.0.1/dist/cookieconsent.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
+  <script defer src="js/consent.js"></script>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
@@ -284,7 +292,8 @@
     <div class="container">
       <p>
         &#169; <span id="displayDateYear"></span> All Rights Reserved By
-        <a href="https://html.design/">SmartStart Consulting</a>
+        <a href="https://html.design/">SmartStart Consulting</a>.
+        <a href="#" data-cc="show-preferencesModal">Cookie settings</a>
       </p>
     </div>
   </footer>
