@@ -18,6 +18,27 @@ document.addEventListener('DOMContentLoaded', function () {
             status.hidden = false;
         }
 
+        function submitNormally() {
+            var submitted = false;
+            function submit() {
+                if (submitted) return;
+                submitted = true;
+                form.submit();
+            }
+
+            // GA isn't loaded without analytics consent: nothing to wait for
+            if (!window.google_tag_manager) return submit();
+
+            // Leaving the page cancels pending requests, so wait until GA has sent the event
+            gtag('event', 'generate_lead', {
+                form_location: page,
+                submit_method: 'formspree_page',
+                event_callback: submit,
+                event_timeout: 1000
+            });
+            setTimeout(submit, 1500);
+        }
+
         form.addEventListener('submit', function (event) {
             event.preventDefault();
             button.disabled = true;
@@ -29,14 +50,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 headers: { 'Accept': 'application/json' }
             }).then(function (response) {
                 if (!response.ok) {
-                    // Rejected (e.g. reCAPTCHA is on for the form): fall back to a normal submit,
-                    // so Formspree can show its own page and the message isn't lost
-                    form.submit();
+                    // Rejected (e.g. reCAPTCHA is on for the form): record the lead, then fall back
+                    // to a normal submit, so Formspree can show its own page and the message isn't lost
+                    submitNormally();
                     return;
                 }
                 form.reset();
                 showStatus('Thank you! Your message was sent. I\'ll reply within 1 business day.', 'success');
-                gtag('event', 'generate_lead', { form_location: page });
+                gtag('event', 'generate_lead', { form_location: page, submit_method: 'inline' });
                 button.disabled = false;
             }).catch(function () {
                 showStatus('Sorry, your message could not be sent. Please check your connection and try again, or write to me on WhatsApp or LinkedIn.', 'error');
