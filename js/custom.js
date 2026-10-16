@@ -21,6 +21,22 @@ document.addEventListener('DOMContentLoaded', evt => {
     }
     getCurrentYear()
 
+    // Mobile menu: open/close with the menu button, close after picking a link
+    var menuToggle = document.querySelector(".menu_toggle");
+    var siteMenu = document.getElementById("site-menu");
+
+    menuToggle.addEventListener("click", function() {
+        var open = siteMenu.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", open);
+    });
+
+    siteMenu.addEventListener("click", function(event) {
+        if (event.target.tagName === "A") {
+            siteMenu.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", false);
+        }
+    });
+
     var readMoreButton = document.getElementById("show-description");
     var consultationsDescription = document.getElementById("professional-description");
 

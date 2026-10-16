@@ -92,28 +92,82 @@ a:focus {
   background-color: #000000;
 }
 
-.header_section .header_top .contact_nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+/* Logo left, menu centered, social icons right */
+.site_nav {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  column-gap: 20px;
 }
 
-.header_section .header_top .contact_nav a {
+.site_logo img {
+  display: block;
+  height: 48px;
+  width: auto;
+}
+
+.site_menu {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site_menu a {
+  display: block;
+  padding: 10px 20px;
   color: #ffffff;
 }
 
-.header_section .header_top .contact_nav a i {
+.site_menu a:hover {
   color: #ff8a1d;
 }
 
-.header_section .header_top .contact_nav .socials {
+.header_section .socials {
+  display: flex;
+  align-items: center;
+  justify-self: end;
   font-size: 30px;
 }
-.header_section .header_top .contact_nav .socials .fa-viber {
+
+.header_section .socials a i {
+  color: #ff8a1d;
+}
+
+.header_section .socials .fa-viber {
   margin: 0px 15px;
+}
+
+.menu_toggle {
+  display: none;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu_toggle span,
+.menu_toggle span::before,
+.menu_toggle span::after {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 3px;
+  position: relative;
+}
+
+.menu_toggle span::before,
+.menu_toggle span::after {
+  content: "";
+  position: absolute;
+  top: -9px;
+}
+
+.menu_toggle span::after {
+  top: 9px;
 }
 
 .recommendations_section {
@@ -149,6 +203,11 @@ a:focus {
   font-weight: bold;
   font-size: 24px;
   font-weight: bold;
+}
+
+.navbar-brand img {
+  display: block;
+  max-width: 100%;
 }
 
 .navbar-brand span {
