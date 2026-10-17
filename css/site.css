@@ -334,7 +334,10 @@ textarea:focus-visible {
 /* How the free call works: a real sequence, so it's numbered */
 .steps {
   padding: var(--section) 0;
-  background: var(--ink);
+  background:
+    linear-gradient(180deg, rgba(10, 15, 67, 0.5), rgba(10, 15, 67, 0.92) 75%),
+    url("../images/bg-systems.svg") center / cover no-repeat,
+    var(--ink);
   color: var(--on-ink);
 }
 
@@ -506,9 +509,25 @@ textarea:focus-visible {
   color: var(--ink);
 }
 
-/* Recommendations */
+/* Recommendations: a blue band with the logo's strokes, to break up the white */
 .recommendations {
   padding: var(--section) 0;
+  background: url("../images/bg-strokes.svg") center / cover no-repeat, var(--blue);
+  color: var(--on-ink);
+}
+
+.recommendations h2,
+.recommendations .quote .quote-pull {
+  color: var(--on-ink);
+}
+
+.recommendations .quote blockquote p,
+.recommendations .quote figcaption {
+  color: #dfe2ff;
+}
+
+.recommendations .quote figcaption strong {
+  color: var(--on-ink);
 }
 
 .quotes {
@@ -561,7 +580,7 @@ textarea:focus-visible {
 
 /* Tools */
 .tools {
-  padding: 0 0 var(--section);
+  padding: calc(var(--section) * 0.75) 0 var(--section);
 }
 
 .tools h2 {
@@ -837,7 +856,6 @@ textarea:focus-visible {
 /* Background decoration for the wide side gutters on desktop: a dot grid
    that fades out toward the content column, and the logo's diagonal strokes */
 .decor .hero,
-.decor .steps,
 .decor .results,
 .decor .contact {
   position: relative;
@@ -846,11 +864,9 @@ textarea:focus-visible {
 }
 
 .decor .hero::before,
-.decor .steps::before,
 .decor .results::before,
 .decor .contact::before,
 .decor .hero::after,
-.decor .steps::after,
 .decor .results::after,
 .decor .contact::after {
   content: "";
@@ -866,14 +882,12 @@ textarea:focus-visible {
   background-size: 22px 22px;
 }
 
-.decor .steps::before,
 .decor .contact::before {
   background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1.3px, transparent 1.8px);
   background-size: 22px 22px;
 }
 
 .decor .hero::before,
-.decor .steps::before,
 .decor .results::before,
 .decor .contact::before {
   -webkit-mask-image: linear-gradient(90deg, #000, transparent calc(50% - 520px), transparent calc(50% + 520px), #000);
@@ -885,14 +899,12 @@ textarea:focus-visible {
   background: url("../images/decor-strokes.svg") no-repeat, url("../images/decor-strokes.svg") no-repeat;
 }
 
-.decor .steps::after,
 .decor .contact::after {
   background: url("../images/decor-strokes-dark.svg") no-repeat, url("../images/decor-strokes-dark.svg") no-repeat;
 }
 
 /* One cluster per gutter, mirrored between sections so the page doesn't repeat */
-.decor .hero::after,
-.decor .steps::after {
+.decor .hero::after {
   background-position: calc(50% - 790px) 85%, calc(50% + 790px) 15%;
 }
 
@@ -903,7 +915,6 @@ textarea:focus-visible {
 
 @media (max-width: 1500px) {
   .decor .hero::after,
-  .decor .steps::after,
   .decor .results::after,
   .decor .contact::after {
     display: none;
