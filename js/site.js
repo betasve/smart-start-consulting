@@ -1,6 +1,10 @@
-// Index page: mobile menu, footer year, Cal.com booking pop-up and quote requests.
+// All pages: mobile menu, footer year, Cal.com booking pop-up and quote requests.
 document.addEventListener('DOMContentLoaded', function () {
     var CAL_LINK = 'svetoslav-beta-sve-blyahov-kjixr4/free-consultation-meeting';
+    var bg = document.documentElement.lang === 'bg';
+    var text = bg
+        ? { openMenu: 'Отвори менюто', closeMenu: 'Затвори менюто', quote: 'Здравейте, Светославе! Интересувам се от оферта за: ' }
+        : { openMenu: 'Open menu', closeMenu: 'Close menu', quote: 'Hi Svetoslav, I\'d like a quote for: ' };
 
     document.getElementById('displayDateYear').textContent = new Date().getFullYear();
 
@@ -11,14 +15,14 @@ document.addEventListener('DOMContentLoaded', function () {
     menuToggle.addEventListener('click', function () {
         var open = siteMenu.classList.toggle('open');
         menuToggle.setAttribute('aria-expanded', open);
-        menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        menuToggle.setAttribute('aria-label', open ? text.closeMenu : text.openMenu);
     });
 
     siteMenu.addEventListener('click', function (event) {
         if (event.target.tagName === 'A') {
             siteMenu.classList.remove('open');
             menuToggle.setAttribute('aria-expanded', false);
-            menuToggle.setAttribute('aria-label', 'Open menu');
+            menuToggle.setAttribute('aria-label', text.openMenu);
         }
     });
 
@@ -85,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('[data-quote]').forEach(function (link) {
         link.addEventListener('click', function () {
             if (!message.value) {
-                message.value = 'Hi Svetoslav, I\'d like a quote for: ' + link.getAttribute('data-quote') + '.\n\n';
+                message.value = text.quote + link.getAttribute('data-quote') + '.\n\n';
             }
             gtag('event', 'quote_click', { service: link.getAttribute('data-quote') });
         });

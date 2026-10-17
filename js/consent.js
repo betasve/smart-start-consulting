@@ -43,6 +43,8 @@
 
         language: {
             default: 'en',
+            // Picks the translation from the page's <html lang>
+            autoDetect: 'document',
             translations: {
                 en: {
                     consentModal: {
@@ -79,6 +81,45 @@
                             {
                                 title: 'More information',
                                 description: 'Read the <a href="privacy.html">Privacy Policy</a> for details on how your data is handled and how to contact us.'
+                            }
+                        ]
+                    }
+                },
+                bg: {
+                    consentModal: {
+                        title: 'Използваме бисквитки',
+                        description: 'Използваме аналитични бисквитки, за да разберем как посетителите използват сайта и да го подобряваме. Те се записват само ако ги приемете. <a href="privacy.html">Политика за поверителност</a>',
+                        acceptAllBtn: 'Приемам всички',
+                        acceptNecessaryBtn: 'Отказвам всички',
+                        showPreferencesBtn: 'Настройки'
+                    },
+                    preferencesModal: {
+                        title: 'Настройки за бисквитки',
+                        acceptAllBtn: 'Приемам всички',
+                        acceptNecessaryBtn: 'Отказвам всички',
+                        savePreferencesBtn: 'Запазване на настройките',
+                        closeIconLabel: 'Затваряне',
+                        sections: [
+                            {
+                                title: 'Задължителни',
+                                description: 'Нужни са, за да работи сайтът, например за да запомни избора ви за бисквитките. Не могат да бъдат изключени.',
+                                linkedCategory: 'necessary'
+                            },
+                            {
+                                title: 'Аналитични',
+                                description: 'Бисквитките на Google Analytics ни помагат да разберем кои страници се посещават и как посетителите намират сайта. Данните са обобщени и не се използват, за да ви идентифицират.',
+                                linkedCategory: 'analytics',
+                                cookieTable: {
+                                    headers: { name: 'Бисквитка', expiration: 'Валидност', description: 'Предназначение' },
+                                    body: [
+                                        { name: '_ga', expiration: '2 години', description: 'Разграничава уникалните посетители' },
+                                        { name: '_ga_*', expiration: '2 години', description: 'Пази състоянието на сесията' }
+                                    ]
+                                }
+                            },
+                            {
+                                title: 'Повече информация',
+                                description: 'В <a href="privacy.html">Политиката за поверителност</a> ще намерите подробности за това как се обработват данните ви и как да се свържете с нас.'
                             }
                         ]
                     }

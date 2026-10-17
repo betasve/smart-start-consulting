@@ -30,6 +30,12 @@ html {
   scroll-padding-top: 88px;
 }
 
+/* Manrope switches to Bulgarian letter shapes for lang="bg"; keep the standard
+   Cyrillic ones, which read better in this geometric face */
+:lang(bg) {
+  font-feature-settings: "locl" 0;
+}
+
 body {
   margin: 0;
   font-family: var(--font);
@@ -203,6 +209,7 @@ textarea:focus-visible {
 
 .socials {
   display: flex;
+  align-items: center;
   justify-self: end;
   gap: 14px;
 }
@@ -216,6 +223,26 @@ textarea:focus-visible {
   width: 26px;
   height: 26px;
   fill: var(--orange);
+}
+
+/* Link to the same page in the other language */
+.socials .lang-switch {
+  align-self: center;
+  margin-right: 6px;
+  padding: 3px 8px;
+  border: 1.5px solid var(--orange);
+  border-radius: 6px;
+  color: var(--orange);
+  font-size: 0.875rem;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+.socials .lang-switch:hover {
+  background: var(--orange);
+  color: #000;
 }
 
 .menu-toggle {
@@ -1037,8 +1064,12 @@ textarea:focus-visible {
     --gutter: 16px;
   }
 
-  .socials a:nth-child(2) {
+  .socials a[aria-label="Viber"] {
     display: none;
+  }
+
+  .socials .lang-switch {
+    margin-right: 2px;
   }
 
   .site-logo img {
@@ -1086,5 +1117,14 @@ textarea:focus-visible {
 
   .btn {
     transition: none;
+  }
+}
+
+/* Smallest phones: keep longer button labels (e.g. Bulgarian) on one line */
+@media (max-width: 359px) {
+  .btn {
+    padding-left: 14px;
+    padding-right: 14px;
+    font-size: 0.9375rem;
   }
 }

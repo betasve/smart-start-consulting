@@ -1,7 +1,17 @@
 // Contact forms and lead tracking, shared by all pages with a contact form.
 // GA events wait in the dataLayer and are only sent if the visitor accepted analytics cookies.
 document.addEventListener('DOMContentLoaded', function () {
-    var page = location.pathname.split('/').pop() || 'index.html';
+    // e.g. "pm.html" or "bg/pm.html"
+    var page = location.pathname.replace(/^\//, '').replace(/(^|\/)$/, '$1index.html');
+    var text = document.documentElement.lang === 'bg' ? {
+        sending: 'Изпращане...',
+        sent: 'Благодаря! Съобщението ви е изпратено. Ще ви отговоря до 1 работен ден.',
+        failed: 'Съобщението не можа да бъде изпратено. Проверете връзката си и опитайте отново или ми пишете в WhatsApp или LinkedIn.'
+    } : {
+        sending: 'Sending...',
+        sent: 'Thank you! Your message was sent. I\'ll reply within 1 business day.',
+        failed: 'Sorry, your message could not be sent. Please check your connection and try again, or write to me on WhatsApp or LinkedIn.'
+    };
 
     // Contact forms: send in the background and show the result next to the form
     document.querySelectorAll('form[action^="https://formspree.io/"]').forEach(function (form) {
@@ -42,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
         form.addEventListener('submit', function (event) {
             event.preventDefault();
             button.disabled = true;
-            showStatus('Sending...', '');
+            showStatus(text.sending, '');
 
             fetch(form.action, {
                 method: 'POST',
@@ -56,11 +66,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     return;
                 }
                 form.reset();
-                showStatus('Thank you! Your message was sent. I\'ll reply within 1 business day.', 'success');
+                showStatus(text.sent, 'success');
                 gtag('event', 'generate_lead', { form_location: page, submit_method: 'inline' });
                 button.disabled = false;
             }).catch(function () {
-                showStatus('Sorry, your message could not be sent. Please check your connection and try again, or write to me on WhatsApp or LinkedIn.', 'error');
+                showStatus(text.failed, 'error');
                 button.disabled = false;
             });
         });
