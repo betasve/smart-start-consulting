@@ -68,6 +68,8 @@ document.addEventListener('DOMContentLoaded', function () {
             if (booked) return;
             booked = true;
             gtag('event', 'book_call', { button_location: lastBookingButton });
+            // LinkedIn conversion, sent only with marketing consent (see js/consent.js)
+            if (window.linkedinConversion) window.linkedinConversion('book_call');
         }
         Cal('on', { action: 'bookingSuccessfulV2', callback: onBooked });
         Cal('on', { action: 'bookingSuccessful', callback: onBooked });

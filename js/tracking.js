@@ -1,5 +1,6 @@
 // Contact forms and lead tracking, shared by all pages with a contact form.
 // GA events wait in the dataLayer and are only sent if the visitor accepted analytics cookies.
+// Leads also go to LinkedIn if the visitor accepted marketing cookies.
 document.addEventListener('DOMContentLoaded', function () {
     // e.g. "pm.html" or "bg/pm.html"
     var page = location.pathname.replace(/^\//, '').replace(/(^|\/)$/, '$1index.html');
@@ -12,6 +13,11 @@ document.addEventListener('DOMContentLoaded', function () {
         sent: 'Thank you! Your message was sent. I\'ll reply within 1 business day.',
         failed: 'Sorry, your message could not be sent. Please check your connection and try again, or write to me on WhatsApp or LinkedIn.'
     };
+
+    // LinkedIn conversion, sent only with marketing consent (see js/consent.js)
+    function linkedin(name) {
+        if (window.linkedinConversion) window.linkedinConversion(name);
+    }
 
     // Contact forms: send in the background and show the result next to the form
     document.querySelectorAll('form[action^="https://formspree.io/"]').forEach(function (form) {
@@ -35,6 +41,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 submitted = true;
                 form.submit();
             }
+
+            linkedin('generate_lead');
 
             // GA isn't loaded without analytics consent: nothing to wait for
             if (!window.google_tag_manager) return submit();
@@ -68,6 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 form.reset();
                 showStatus(text.sent, 'success');
                 gtag('event', 'generate_lead', { form_location: page, submit_method: 'inline' });
+                linkedin('generate_lead');
                 button.disabled = false;
             }).catch(function () {
                 showStatus(text.failed, 'error');
@@ -87,6 +96,9 @@ document.addEventListener('DOMContentLoaded', function () {
         else if (href.indexOf('viber:') === 0) method = 'viber';
         else if (href.indexOf('linkedin.com/') !== -1) method = 'linkedin';
 
-        if (method) gtag('event', 'contact_click', { method: method });
+        if (method) {
+            gtag('event', 'contact_click', { method: method });
+            linkedin('contact_click');
+        }
     });
 });
