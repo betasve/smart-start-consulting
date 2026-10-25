@@ -6,9 +6,9 @@
     var LINKEDIN_PARTNER_ID = '11168665';
     // Conversion IDs from LinkedIn Campaign Manager (Data → Conversions); null = not set up yet
     var LINKEDIN_CONVERSIONS = {
-        generate_lead: null,
-        book_call: null,
-        contact_click: null
+        generate_lead: 32360833,
+        book_call: 32360841,
+        contact_click: 32360849
     };
     var gaLoaded = false;
     var linkedinLoaded = false;
